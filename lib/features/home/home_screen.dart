@@ -156,7 +156,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: 'O aplikacji',
                   color: AppColors.error,
                   onTap: () => _navigateToCategory('about_app'),
-                  badge: 12,
                 ),
                 CategoryCard(
                   emoji: '🚊',
@@ -181,7 +180,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: 'Bydgoszcz na wodzie',
                   color: AppColors.culturePurple,
                   onTap: () => _navigateToCategory('water_routes'),
-                  badge: 5,
                 ),
               ],
             ),
