@@ -81,7 +81,7 @@ class DiscoveryData {
         address: 'ul. Jagiellońska, 85-097 Bydgoszcz',
         latitude: 53.12941257760773,
         longitude: 17.994651957143258,
-        tags: ['Zabytek', 'Architektura', 'Most', 'Technika'],
+        tags: ['Architektura', 'Most', 'Technika'],
         rarity: 'common',
       ),
 
@@ -206,42 +206,8 @@ class DiscoveryData {
         rarity: 'common',
       ),
 
-      DiscoveryItem( // Może do usunięcia...
-        number: 13,
-        id: 'bulwar_nadrzeczny',
-        name: 'Bulwar Nadrzeczny',
-        category: 'Spacer',
-        description: 'Przepiękny bulwar wzdłuż Brdy w centrum miasta. '
-            'Idealne miejsce na spacery, jogging i relaks. '
-            'Liczne kawiarnie i restauracje z widokiem na wodę. '
-            'Latem pełno żaglówek i kajaków na rzece.',
-        hint: 'Ścieżka wzdłuż rzeki Brdy w centrum',
-        address: 'Bulwar Nadrzeczny, 85-009 Bydgoszcz',
-        latitude: 53.1239, //do zmiany
-        longitude: 18.0079, //do zmiany
-        tags: ['Spacer', 'Woda', 'Relaks', 'Widoki'],
-        rarity: 'common',
-      ),
-
-      DiscoveryItem( // Może do usunięcia...
-        number: 14,
-        id: 'kanal_bydgoski',
-        name: 'Kanał Bydgoski',
-        category: 'Historia',
-        description: 'Zabytkowy kanał żeglugowy z XVIII wieku łączący Wisłę z Brdą. '
-            'Jeden z najstarszych kanałów w Europie, ukończony w 1774 roku. '
-            'Ważny szlak handlowy przez wieki. '
-            'Dziś popularny szlak kajakowy i turystyczny.',
-        hint: 'Kanał wodny biegnący przez miasto',
-        address: 'Kanał Bydgoski, 85-009 Bydgoszcz',
-        latitude: 53.1250, //do zmiany
-        longitude: 18.0100, //do zmiany
-        tags: ['Historia', 'Woda', 'Żegluga', 'Kajaki'],
-        rarity: 'common',
-      ),
-
       DiscoveryItem(
-        number: 15,
+        number: 16,
         id: 'hotel_pod_orlem',
         name: 'Hotel Pod Orłem',
         category: 'Architektura',
@@ -258,15 +224,12 @@ class DiscoveryData {
       ),
 
       DiscoveryItem(
-        number: 16,
+        number: 17,
         id: 'fontanna_potop',
         name: 'Fontanna Potop',
         category: 'Sztuka',
-        description: 'Nowoczesna fontanna multimedialna przy Operze Nova. '
-            'Spektakle wodno-świetlne z muzyką. '
-            'Latem miejsce spotkań i relaksu. '
-            'Wieczorne pokazy przyciągają tłumy turystów.',
-        hint: 'Fontanna przy Operze Nova i Placu Wolności', //do sprawdzenia
+        description: 'Ten efektowny wodotrysk, autorstwa Ferdynanda Lepckego stanął w tym miejscu w 1904 r., w ówczesnym ogrodzie Regencji bydgoskiej. W dużym basenie, z czerwonego piaskowca, artysta umieścił kompozycję nawiązującą do biblijnego potopu. Pośrodku znajduje się kilkupostaciowa grupa wypiętrzona na wysokość 6. metrów - z muskularnym mężczyzną trzymającym omdlałą kobietę i z drugą martwą u jego nóg oraz z dzieckiem wspinającym się po niej. Po bokach znajdują się rzeźby: z jednej strony - mężczyzny walczącego o życie ze spowijającym go wężem, zaś z drugiej - niedźwiedzicy z martwym niedźwiadkiem. Wyjątkowości przydała całości nawierzchnia wokół fontanny wykonana w technice wielobarwnej, dekoracyjnej mozaiki z motywem fal.',
+        hint: 'Fontanna przy Placu Wolności',
         address: 'Park im. Kazimierza Wielkiego, 85-980 Bydgoszcz',
         latitude: 53.12631099632849,
         longitude: 18.006020156271095,
@@ -275,7 +238,7 @@ class DiscoveryData {
       ),
 
       DiscoveryItem(
-        number: 17,
+        number: 18,
         id: 'park_kochanowskiego',
         name: 'Park im. Jana Kochanowskiego w Bydgoszczy',
         category: 'Park',
@@ -294,7 +257,7 @@ class DiscoveryData {
       ),
 
       DiscoveryItem(
-        number: 18,
+        number: 19,
         id: 'dluga',
         name: 'Ulica Długa',
         category: 'Ulica',
@@ -313,7 +276,7 @@ class DiscoveryData {
       ),
 
       DiscoveryItem(
-        number: 19,
+        number: 20,
         id: 'barka_lemara',
         name: 'Barka Lemara',
         category: 'Kultura',
