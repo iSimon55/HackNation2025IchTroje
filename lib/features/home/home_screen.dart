@@ -3,10 +3,12 @@ import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_spacing.dart';
 import '../../core/constants/app_text_styles.dart';
 import '../../core/data/mock_data.dart';
+import '../../core/data/category_data.dart';
 import '../discovery/discovery_screen.dart';
 import '../attractions/attractions_screen.dart';
 import '../map/map_screen.dart';
 import '../poi_details/poi_details_screen.dart';
+import '../category/category_detail_screen.dart';
 import 'widgets/category_card.dart';
 import 'widgets/quick_action_button.dart';
 
@@ -51,7 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
           slivers: [
             _buildHeader(),
             _buildSearchBar(),
-            _buildQuickAction(),
             _buildCategories(),
             _buildEvents(),
             const SliverPadding(padding: EdgeInsets.only(bottom: AppSpacing.xl)),
@@ -81,27 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: AppTextStyles.h2.copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
-            ),
-            Row(
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.notifications_outlined),
-                  onPressed: () {},
-                  color: AppColors.textPrimary,
-                ),
-                CircleAvatar(
-                  radius: 20,
-                  backgroundColor: AppColors.primary,
-                  child: Text(
-                    'U',
-                    style: AppTextStyles.bodyLarge.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            )
           ],
         ),
       ),
@@ -135,21 +116,16 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildQuickAction() {
-    return SliverToBoxAdapter(
-      child: QuickActionButton(
-        title: 'ROZPOCZNIJ WYCIECZKĘ!',
-        subtitle: 'Najbliższe: Wyspa Młyńska (1.2km)',
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => POIDetailsScreen(poi: MockData.wyspaMlynska),
-            ),
-          );
-        },
-      ),
-    );
+  void _navigateToCategory(String categoryId) {
+    final category = CategoryData.getCategoryById(categoryId);
+    if (category != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => CategoryDetailScreen(category: category),
+        ),
+      );
+    }
   }
 
   Widget _buildCategories() {
@@ -163,17 +139,8 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Odkrywaj Bydgoszcz',
+                  'Pierwszy raz w Bydgoszczy?',
                   style: AppTextStyles.h3,
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Zobacz więcej →',
-                    style: AppTextStyles.bodySmall.copyWith(
-                      color: AppColors.secondary,
-                    ),
-                  ),
                 ),
               ],
             ),
@@ -185,35 +152,35 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.symmetric(horizontal: AppSpacing.m),
               children: [
                 CategoryCard(
-                  emoji: '🏛️',
-                  label: 'Secesja',
-                  color: AppColors.secessionGold,
-                  onTap: () {},
-                ),
-                CategoryCard(
-                  emoji: '⚙️',
-                  label: 'Industry',
-                  color: AppColors.industrialSteel,
-                  onTap: () {},
-                ),
-                CategoryCard(
-                  emoji: '🚢',
-                  label: 'Szlak Wodny',
-                  color: AppColors.secondary,
-                  onTap: () {},
-                ),
-                CategoryCard(
                   emoji: '📍',
-                  label: 'Blisko Mnie',
+                  label: 'O aplikacji',
                   color: AppColors.error,
-                  onTap: () {},
+                  onTap: () => _navigateToCategory('about_app'),
                   badge: 12,
                 ),
                 CategoryCard(
+                  emoji: '🚊',
+                  label: 'Bilety komunikacyjne',
+                  color: AppColors.secessionGold,
+                  onTap: () => _navigateToCategory('public_transport'),
+                ),
+                CategoryCard(
+                  emoji: '⚙️',
+                  label: 'Bilet przejazdowy',
+                  color: AppColors.industrialSteel,
+                  onTap: () => _navigateToCategory('travel_pass'),
+                ),
+                CategoryCard(
                   emoji: '🎭',
-                  label: 'Wydarzenia',
+                  label: 'Obowiązkowe atrakcje',
+                  color: AppColors.secondary,
+                  onTap: () => _navigateToCategory('must_see'),
+                ),
+                CategoryCard(
+                  emoji: '🚢',
+                  label: 'Bydgoszcz na wodzie',
                   color: AppColors.culturePurple,
-                  onTap: () {},
+                  onTap: () => _navigateToCategory('water_routes'),
                   badge: 5,
                 ),
               ],
