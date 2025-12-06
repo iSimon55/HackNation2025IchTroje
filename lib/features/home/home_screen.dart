@@ -232,9 +232,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: AppSpacing.m),
                 _buildEventCard(
                   title: 'HackNation 2025',
-                  date: '6-8 grudnia 2025',
-                  location: 'Uniwersytet Technologiczno-Przyrodniczy',
-                  description: 'Największy hackathon w regionie! 48 godzin kodowania, '
+                  date: '6-7 grudnia 2025',
+                  location: 'Bydgoskie Centrum Targowo - Wystawiennicze',
+                  description: 'Największy hackathon w Polsce! 24 godziny kodowania, '
                       'warsztaty, mentoring i networking. Wyzwania dla developerów, '
                       'projektantów i przedsiębiorców.',
                   emoji: '💻',
