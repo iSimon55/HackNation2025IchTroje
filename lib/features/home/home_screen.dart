@@ -152,31 +152,31 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.symmetric(horizontal: AppSpacing.m),
               children: [
                 CategoryCard(
-                  emoji: '📍',
+                  emoji: 'ℹ️',
                   label: 'O aplikacji',
                   color: AppColors.error,
                   onTap: () => _navigateToCategory('about_app'),
                 ),
                 CategoryCard(
-                  emoji: '🚊',
+                  emoji: '🚋',
                   label: 'Bilety komunikacyjne',
                   color: AppColors.secessionGold,
                   onTap: () => _navigateToCategory('public_transport'),
                 ),
                 CategoryCard(
-                  emoji: '⚙️',
+                  emoji: '🎟️',
                   label: 'Bilet przejazdowy',
                   color: AppColors.industrialSteel,
                   onTap: () => _navigateToCategory('travel_pass'),
                 ),
                 CategoryCard(
-                  emoji: '🎭',
+                  emoji: '👀',
                   label: 'Obowiązkowe atrakcje',
                   color: AppColors.secondary,
                   onTap: () => _navigateToCategory('must_see'),
                 ),
                 CategoryCard(
-                  emoji: '🚢',
+                  emoji: '🚤',
                   label: 'Bydgoszcz na wodzie',
                   color: AppColors.culturePurple,
                   onTap: () => _navigateToCategory('water_routes'),
