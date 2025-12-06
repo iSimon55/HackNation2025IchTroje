@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_spacing.dart';
 import '../../core/constants/app_text_styles.dart';
-import '../../core/data/mock_data.dart';
+import '../../core/models/event_info.dart';
+import '../../core/data/event_data.dart';
 import '../../core/data/category_data.dart';
 import '../discovery/discovery_screen.dart';
 import '../attractions/attractions_screen.dart';
 import '../map/map_screen.dart';
-import '../poi_details/poi_details_screen.dart';
 import '../category/category_detail_screen.dart';
 import 'widgets/category_card.dart';
-import 'widgets/quick_action_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -52,7 +52,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: CustomScrollView(
           slivers: [
             _buildHeader(),
-            _buildSearchBar(),
             _buildCategories(),
             _buildEvents(),
             const SliverPadding(padding: EdgeInsets.only(bottom: AppSpacing.xl)),
@@ -84,33 +83,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             )
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSearchBar() {
-    return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.m),
-        child: TextField(
-          decoration: InputDecoration(
-            hintText: 'Szukaj miejsc, tras, wydarzeń...',
-            hintStyle: AppTextStyles.body.copyWith(
-              color: AppColors.textTertiary,
-            ),
-            prefixIcon: const Icon(Icons.search, color: AppColors.textTertiary),
-            filled: true,
-            fillColor: AppColors.backgroundGray,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(24),
-              borderSide: BorderSide.none,
-            ),
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: AppSpacing.m,
-              vertical: AppSpacing.s,
-            ),
-          ),
         ),
       ),
     );
@@ -218,29 +190,12 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: AppSpacing.m),
             child: Column(
-              children: [
-                _buildEventCard(
-                  title: 'Jarmark Bożonarodzeniowy',
-                  date: '1-24 grudnia 2025',
-                  location: 'Stary Rynek',
-                  description: 'Tradycyjny jarmark świąteczny z lokalnymi rękodzielnikami, '
-                      'straganami z regionalnymi produktami i gorącym grzańcem. '
-                      'Atmosfera świąt w sercu Starego Miasta!',
-                  emoji: '🎄',
-                  color: Colors.red.shade700,
-                ),
-                const SizedBox(height: AppSpacing.m),
-                _buildEventCard(
-                  title: 'HackNation 2025',
-                  date: '6-7 grudnia 2025',
-                  location: 'Bydgoskie Centrum Targowo - Wystawiennicze',
-                  description: 'Największy hackathon w Polsce! 24 godziny kodowania, '
-                      'warsztaty, mentoring i networking. Wyzwania dla developerów, '
-                      'projektantów i przedsiębiorców.',
-                  emoji: '💻',
-                  color: AppColors.primary,
-                ),
-              ],
+              children: EventData.getAllEvents().map((event) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: AppSpacing.m),
+                  child: _buildEventCard(event),
+                );
+              }).toList(),
             ),
           ),
           const SizedBox(height: AppSpacing.m),
@@ -249,14 +204,9 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildEventCard({
-    required String title,
-    required String date,
-    required String location,
-    required String description,
-    required String emoji,
-    required Color color,
-  }) {
+  Widget _buildEventCard(EventInfo event) {
+    final color = Color(int.parse('0xFF${event.colorHex}'));
+    
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -281,7 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               children: [
                 Text(
-                  emoji,
+                  event.emoji,
                   style: const TextStyle(fontSize: 32),
                 ),
                 const SizedBox(width: AppSpacing.s),
@@ -290,7 +240,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        title,
+                        event.title,
                         style: AppTextStyles.h3.copyWith(
                           color: color,
                         ),
@@ -301,7 +251,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Icon(Icons.calendar_today, size: 14, color: color),
                           const SizedBox(width: 4),
                           Text(
-                            date,
+                            event.date,
                             style: AppTextStyles.caption.copyWith(
                               color: color,
                               fontWeight: FontWeight.w600,
@@ -326,7 +276,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(width: 4),
                     Expanded(
                       child: Text(
-                        location,
+                        event.location,
                         style: AppTextStyles.bodySmall.copyWith(
                           color: AppColors.textSecondary,
                           fontWeight: FontWeight.w600,
@@ -337,7 +287,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(height: AppSpacing.s),
                 Text(
-                  description,
+                  event.description,
                   style: AppTextStyles.body.copyWith(
                     height: 1.5,
                   ),
@@ -348,7 +298,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () => _launchEventUrl(event.websiteUrl),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: color,
                       side: BorderSide(color: color),
@@ -365,6 +315,22 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  Future<void> _launchEventUrl(String url) async {
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Nie można otworzyć strony wydarzenia'),
+            backgroundColor: AppColors.error,
+          ),
+        );
+      }
+    }
   }
 
   Widget _buildBottomNav() {

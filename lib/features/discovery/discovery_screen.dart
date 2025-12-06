@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_spacing.dart';
@@ -255,8 +256,8 @@ class _DiscoveryCard extends StatelessWidget {
                       ? (discovery.userPhotoPath != null
                           ? ClipRRect(
                               borderRadius: BorderRadius.circular(8),
-                              child: Image.network(
-                                discovery.userPhotoPath!,
+                              child: Image.file(
+                                File(discovery.userPhotoPath!),
                                 fit: BoxFit.cover,
                                 width: double.infinity,
                                 height: double.infinity,

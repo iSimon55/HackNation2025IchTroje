@@ -476,9 +476,22 @@ class _DiscoveryDetailScreenState extends State<DiscoveryDetailScreen> {
                             style: AppTextStyles.body.copyWith(height: 1.6),
                           ),
                           const SizedBox(height: 24),
-                          Text(
-                            '📍 Lokalizacja',
-                            style: AppTextStyles.h3,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                '📍 Lokalizacja',
+                                style: AppTextStyles.h3,
+                              ),
+                              TextButton.icon(
+                                onPressed: _openInGoogleMaps,
+                                icon: const Icon(Icons.map, size: 18),
+                                label: const Text('Otwórz w Mapach'),
+                                style: TextButton.styleFrom(
+                                  foregroundColor: AppColors.primary,
+                                ),
+                              ),
+                            ],
                           ),
                           const SizedBox(height: 8),
                           Text(
