@@ -58,7 +58,7 @@ class DiscoveryData {
         id: 'stary_rynek',
         name: 'Stary Rynek',
         category: 'Centrum',
-        description: 'To centralny plac miasta, przez który przebiega osiemnasty południk długości geograficznej wschodniej. Na tym samym południku leżą na przykład Kapsztad i Sztokholm.'
+        description: 'To centralny plac miasta, przez który przebiega osiemnasty południk długości geograficznej wschodniej. Na tym samym południku leżą na przykład Kapsztad i Sztokholm. '
                     'Stary Rynek wytyczony został w 1346 roku, gdy król Kazimierz Wielki nadał Bydgoszczy prawa miejskie. Na przestrzeni wieków zabudowa Rynku wielokrotnie się zmieniała. '
                     'Ta, którą widzisz, pochodzi głównie z XIX w. Z dawnych opisów i wykopalisk wiadomo, że na środku Rynku znajdował się ratusz. Początkowo był prawdopodobnie drewniany i spłonął w pożarze miasta w 1425 r.'
                     'Kolejny był już murowany, w stylu gotyckim, ale i jego pochłonął ogień.',
@@ -90,9 +90,9 @@ class DiscoveryData {
         id: 'przechodzacy_przez_rzeke',
         name: 'Przechodzący przez rzekę',
         category: 'Sztuka',
-        description: 'Rzeźba balansująca, zawieszona na linie, waży tylko 50 kg.'
+        description: 'Rzeźba balansująca, zawieszona na linie, waży tylko 50 kg. '
                     'Autorem tej niezwykłej rzeźby jest Jerzy Kędziora. "Przechodzący" '
-                    'zawitał do Bydgoszczy 1 maja 2004 dla upamiętnienia wejścia Polski do Unii Europejskiej.',
+                    'zawitał do Bydgoszczy 1 maja 2004 dla upamiętnienia wejścia Polski do Unii Europejskiej. ',
         hint: 'Tą Balansującą rzeźbę często znajdziesz na pocztówkach z Bydgoszczy',
         address: 'Most Staromiejski Sulimy-Kamińskiego, 85-034 Bydgoszcz',
         latitude: 53.12338975134721, 
@@ -109,7 +109,7 @@ class DiscoveryData {
         description: 'Unikalne muzeum numizmatyczne i historii pieniądza. '
             'Znajduje się w zabytkowej mennicy na Wyspie Młyńskiej. '
             'Kolekcja obejmuje monety z różnych epok i krajów. '
-            'Interaktywne wystawy i warsztaty edukacyjne.',
+            'Interaktywne wystawy i warsztaty edukacyjne. ',
         hint: 'Muzeum na Wyspie Młyńskiej przy ul. Mennicy',
         address: 'ul. Mennica 4, 85-112 Bydgoszcz',
         latitude: 53.123307086334016,
@@ -174,23 +174,6 @@ class DiscoveryData {
 
       DiscoveryItem(
         number: 11,
-        id: 'most_tramwajowy',
-        name: 'Most Tramwajowy',
-        category: 'Komunikacja',
-        description: 'Stalowy most z 1915 roku, pierwotnie kolejowy. '
-            'Obecnie służy tramwajom i pieszym. '
-            'Piękny widok na Operę Nova i Stare Miasto. '
-            'Miejsce popularnych zdjęć z przejeżdżającymi tramwajami.',
-        hint: 'Most przy Operze Nova, jeżdżą tramwaje',
-        address: 'Most tramwajowy, 85-009 Bydgoszcz',
-        latitude: 53.1236,
-        longitude: 18.0086,
-        tags: ['Most', 'Komunikacja', 'Widok', 'Tramwaje'],
-        rarity: 'common',
-      ),
-
-      DiscoveryItem(
-        number: 12,
         id: 'ulica_cieszkowskiego',
         name: 'Ulica Cieszkowskiego',
         category: 'Architektura',
@@ -200,14 +183,14 @@ class DiscoveryData {
             'Idealne miejsce dla miłośników architektury.',
         hint: 'Główna ulica handlowa w centrum, secesyjne kamienice',
         address: 'ul. Cieszkowskiego, 85-009 Bydgoszcz',
-        latitude: 53.1230,
-        longitude: 18.0077,
+        latitude: 53.13087521468706,
+        longitude: 18.006896233138274,
         tags: ['Architektura', 'Secesja', 'Ulica', 'Zakupy'],
         rarity: 'common',
       ),
 
       DiscoveryItem(
-        number: 13,
+        number: 12,
         id: 'myslecinek',
         name: 'Myślęcinek',
         category: 'Natura',
@@ -216,15 +199,15 @@ class DiscoveryData {
             'Jeden z największych parków miejskich w Polsce. '
             'Idealne miejsce na rodzinny wypoczynek i kontakt z naturą.',
         hint: 'Duży park z ZOO na północy miasta',
-        address: 'ul. Gdańska 103, 85-674 Bydgoszcz',
-        latitude: 53.1450,
-        longitude: 18.0250,
+        address: 'ul. Gdańska 173, 85-674 Bydgoszcz',
+        latitude: 53.16721611832878,
+        longitude: 18.038909363687708,
         tags: ['Natura', 'Park', 'ZOO', 'Rodzinnie'],
         rarity: 'common',
       ),
 
-      DiscoveryItem(
-        number: 14,
+      DiscoveryItem( // Może do usunięcia...
+        number: 13,
         id: 'bulwar_nadrzeczny',
         name: 'Bulwar Nadrzeczny',
         category: 'Spacer',
@@ -234,14 +217,14 @@ class DiscoveryData {
             'Latem pełno żaglówek i kajaków na rzece.',
         hint: 'Ścieżka wzdłuż rzeki Brdy w centrum',
         address: 'Bulwar Nadrzeczny, 85-009 Bydgoszcz',
-        latitude: 53.1239,
-        longitude: 18.0079,
+        latitude: 53.1239, //do zmiany
+        longitude: 18.0079, //do zmiany
         tags: ['Spacer', 'Woda', 'Relaks', 'Widoki'],
         rarity: 'common',
       ),
 
-      DiscoveryItem(
-        number: 15,
+      DiscoveryItem( // Może do usunięcia...
+        number: 14,
         id: 'kanal_bydgoski',
         name: 'Kanał Bydgoski',
         category: 'Historia',
@@ -251,31 +234,31 @@ class DiscoveryData {
             'Dziś popularny szlak kajakowy i turystyczny.',
         hint: 'Kanał wodny biegnący przez miasto',
         address: 'Kanał Bydgoski, 85-009 Bydgoszcz',
-        latitude: 53.1250,
-        longitude: 18.0100,
+        latitude: 53.1250, //do zmiany
+        longitude: 18.0100, //do zmiany
         tags: ['Historia', 'Woda', 'Żegluga', 'Kajaki'],
         rarity: 'common',
       ),
 
       DiscoveryItem(
-        number: 16,
-        id: 'dom_pod_orlem',
-        name: 'Dom Pod Orłem',
+        number: 15,
+        id: 'hotel_pod_orlem',
+        name: 'Hotel Pod Orłem',
         category: 'Architektura',
-        description: 'Przepiękna secesyjna kamienica przy Starym Rynku. '
-            'Zbudowana w 1904 roku, ozdobiona rzeźbami i reliefami. '
-            'Charakterystyczny orzeł na fasadzie dał nazwę budynkowi. '
-            'Jedno z najładniejszych secesyjnych budynków w mieście.',
-        hint: 'Kamienica ze złotym orłem na Starym Rynku',
-        address: 'Stary Rynek 4, 85-105 Bydgoszcz',
-        latitude: 53.1236,
-        longitude: 18.0076,
+        description: 'Hotel Pod Orłem to zabytkowy hotel przy ul. Gdańskiej 14 w centrum Bydgoszczy — został wzniesiony w latach 1893–1896 według' 
+            'projektu wybitnego architekta Józef Święcicki. '
+            'Jego bogato zdobiona fasada z orłem nad wejściem i wnętrza o stylu neobarokowym czynią go ikoną bydgoskiej architektury przełomu XIX i XX wieku.'
+            'Obecnie hotel ma standard 4 gwiazdek, oferuje pokoje, restaurację, sale konferencyjne, a zarządzany jest przez sieć Focus Hotels. ',
+        hint: 'Hotel ze złotym orłem na ul. Gdańskiej',
+        address: 'Gdańska 14, 85-105 Bydgoszcz',
+        latitude: 53.126090809677656,
+        longitude: 18.003799918390953,
         tags: ['Architektura', 'Secesja', 'Rynek', 'Zabytek'],
         rarity: 'common',
       ),
 
       DiscoveryItem(
-        number: 17,
+        number: 16,
         id: 'fontanna_potop',
         name: 'Fontanna Potop',
         category: 'Sztuka',
@@ -283,50 +266,54 @@ class DiscoveryData {
             'Spektakle wodno-świetlne z muzyką. '
             'Latem miejsce spotkań i relaksu. '
             'Wieczorne pokazy przyciągają tłumy turystów.',
-        hint: 'Fontanna przy Operze Nova i Placu Wolności',
-        address: 'Plac Wolności, 85-009 Bydgoszcz',
-        latitude: 53.1234,
-        longitude: 18.0085,
+        hint: 'Fontanna przy Operze Nova i Placu Wolności', //do sprawdzenia
+        address: 'Park im. Kazimierza Wielkiego, 85-980 Bydgoszcz',
+        latitude: 53.12631099632849,
+        longitude: 18.006020156271095,
         tags: ['Sztuka', 'Fontanna', 'Pokazy', 'Wieczór'],
-        rarity: 'common',
+        rarity: 'rare',
       ),
 
       DiscoveryItem(
-        number: 18,
+        number: 17,
         id: 'park_kochanowskiego',
-        name: 'Park im. Kochanowskiego',
+        name: 'Park im. Jana Kochanowskiego w Bydgoszczy',
         category: 'Park',
-        description: 'Zabytkowy park z XIX wieku w centrum miasta. '
-            'Piękne alejki, stare drzewa i malownicze stawy. '
-            'Monument Walki i Męczeństwa i inne pomniki historyczne. '
-            'Ulubione miejsce spacerów mieszkańców.',
-        hint: 'Duży park w centrum przy ul. Gdańskiej',
-        address: 'ul. Gdańska 1, 85-006 Bydgoszcz',
-        latitude: 53.1260,
-        longitude: 18.0120,
+        description: 'Malowniczo wijące się alejki, rozległe tereny zielone, plac zabaw dla dzieci i wiele gatunków drzew i krzewów sprawiają, że park jest jednym z '
+                  'ulubionych terenów rekreacyjnych mieszkańców. Z parkiem sąsiaduje Akademia Muzyczna, z okien której płynie muzyka, umilająca spacer. Najchętniej '
+                  '„odwiedzaną” w parku rzeźbą jest Łuczniczka, ustawiona w 1960 r. na parkowym skwerze naprzeciwko Teatru Polskiego. W latach 70. XX wieku z inicjatywy '
+                  'dyrektora Filharmonii Pomorskiej Andrzeja Szwalbego rozpoczęto tworzenie, tak zwanej, dzielnicy muzycznej. Park i okolice Filharmonii Pomorskiej '
+                  'sukcesywnie upiększano rzeźbami kompozytorów i wirtuozów (m.in. F. Chopina, I. Paderewskiego, S. Moniuszki, H. Wieniawskiego, G. Bacewicz). '
+                  'W parku znajduje się również kilka pomników przyrody: topola czarna, olsza sercolistna, kasztanowiec czerwony oraz dąb szypułkowy.',
+        hint: 'Park muzyczny z rzeźbami kompozytorów przy Akademii Muzycznej',
+        address: 'ul. 20 stycznia 1920 roku, 85-980 Bydgoszcz',
+        latitude: 53.13017220311464,
+        longitude: 18.01171467852984,
         tags: ['Park', 'Historia', 'Przyroda', 'Spacer'],
         rarity: 'common',
       ),
 
       DiscoveryItem(
-        number: 19,
+        number: 18,
         id: 'dluga',
         name: 'Ulica Długa',
         category: 'Ulica',
-        description: 'Najstarsza ulica w Bydgoszczy, pamiętająca XIV wiek. '
-            'Wąska, brukowana uliczka pełna klimatu. '
-            'Zabytkowe kamieniczki i stare pawlacze. '
-            'Idealne miejsce do fotografii klimatycznego Starego Miasta.',
-        hint: 'Wąska uliczka między Starym Rynkiem a rzeką',
-        address: 'ul. Długa, 85-034 Bydgoszcz',
-        latitude: 53.1247,
-        longitude: 18.0071,
-        tags: ['Historia', 'Ulica', 'Stare Miasto', 'Klimat'],
+        description: 'Najdłuższa ulica w Bydgoszczy (650,3 m). '
+            'Spacerując ulicą Długą, wśród stylowych kamieniczek, głównie z końca XVIII '
+            'i z początku XIX w., można poczuć klimat dawnej Bydgoszczy, choć niegdyś kupiecka arteria '
+            'utraciła obecnie swoją pozycję handlowego centrum miasta. Warto zajrzeć do wyjątkowego Muzeum Mydła '
+            'i Historii Brudu pod numerem 13-17, a także przystanąć przy XVII wiecznej kamienicy pod numerem 22, '
+            'gdzie urodził się malarz Maksymilian Piotrowski (1813-1875), profesor Akademii Sztuk Pięknych w Królewcu.',
+        hint: 'Najdłuższa ulica z klimatycznymi kamienicami w centrum',
+        address: 'ul. Długa, 85-980 Bydgoszcz',
+        latitude: 53.12114706035226,
+        longitude: 17.999260140965763,
+        tags: ['Historia', 'Ulica', 'Klimat'],
         rarity: 'common',
       ),
 
       DiscoveryItem(
-        number: 20,
+        number: 19,
         id: 'barka_lemara',
         name: 'Barka Lemara',
         category: 'Kultura',
@@ -335,10 +322,10 @@ class DiscoveryData {
             'Koncerty, wystawy i wydarzenia kulturalne. '
             'Niepowtarzalny klimat i widok z pokładu na rzekę.',
         hint: 'Żółta barka cumująca przy Starym Porcie',
-        address: 'Stary Port, 85-105 Bydgoszcz',
-        latitude: 53.1244,
-        longitude: 18.0074,
-        tags: ['Kultura', 'Kawiarnia', 'Sztuka', 'Woda'],
+        address: 'ul. Spichlerna 1, 85-108 Bydgoszcz',
+        latitude: 53.12354785066936,
+        longitude: 18.00175769354636,
+        tags: ['Kultura', 'Woda'],
         rarity: 'common',
       ),
     ];
