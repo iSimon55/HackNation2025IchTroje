@@ -12,7 +12,7 @@ class CategoryData {
           title: 'Witaj w Odkryj Bydgoszcz!',
           icon: '👋',
           content: 'Nasza aplikacja to Twój osobisty przewodnik po najpiękniejszych zakątkach Bydgoszczy. '
-              'Odkrywaj ukryte perełki, poznawaj historię miasta i kolekcjonuj miejsca jak w Pokedexie!',
+              'Odkrywaj ukryte perełki, poznawaj historię miasta i kolekcjonuj miejsca jako swój pamiętnik z podróży!',
         ),
         CategorySection(
           title: 'Główne funkcje',

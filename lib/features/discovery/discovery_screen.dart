@@ -93,7 +93,7 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
             backgroundColor: AppColors.primaryDark,
             flexibleSpace: FlexibleSpaceBar(
               title: const Text(
-                'Bydgoski Pokedex',
+                'Bydgoski pamiętnik',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
