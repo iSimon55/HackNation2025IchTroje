@@ -25,14 +25,14 @@ class DiscoveryData {
         id: 'wyspa_mlynska',
         name: 'Wyspa Młyńska',
         category: 'Historia',
-        description: 'Historyczne serce przemysłowej Bydgoszczy. Od XV wieku znajdowały się '
-            'tu młyny wodne wykorzystujące siłę Brdy. W XVI wieku działała tu mennica królewska. '
-            'Zabytkowe spichlerze z XIX wieku przypominają o świetności przemysłu młynarskiego. '
-            'Dziś to malownicza wyspa pełna historii i uroku.',
-        hint: 'Wyspa na rzece Brdzie w centrum miasta, obok Starego Rynku',
-        address: 'ul. Mennica 2, 85-112 Bydgoszcz',
-        latitude: 53.1245,
-        longitude: 18.0065,
+        description: 'Wyspa Młyńska to przestrzenne serce Bydgoszczy. Zielona enklawa w samym centrum 360-tysięcznego, '
+        'tętniącego życiem miasta. Dotąd nie zagarnięta przez łapczywą współczesną cywilizację. Aż dziw! '
+        'Park, aleje starych drzew: kasztanów, lip. Duże place trawników, alejki z ławeczkami, szum gwałtownie spadającej wody na jazie i przepuście.'
+        'Dookoła woda.',
+        hint: 'Zielona wyspa z parkami i zabytkami na Brdzie',
+        address: 'ul. Mennica 10, 85-114 Bydgoszcz',
+        latitude: 53.12284148564446,
+        longitude: 17.995841101839385,
         tags: ['Historia', 'Przemysł', 'Woda', 'Park'],
         rarity: 'legendary',
       ),
@@ -42,15 +42,14 @@ class DiscoveryData {
         id: 'mlyny_rothera',
         name: 'Młyny Rothera',
         category: 'Industrial',
-        description: 'Monumentalny kompleks młynów z końca XIX wieku, symbol industrialnej '
-            'potęgi Bydgoszczy. Zbudowany przez rodzinę Rotherów w 1896 roku. '
-            'Sześciokondygnacyjny budynek z czerwonej cegły to perła architektury przemysłowej. '
-            'Obecnie obiekt rewitalizowany, planowane centrum kulturalno-biznesowe.',
-        hint: 'Wielki ceglany budynek przy Kanale Bydgoskim',
+        description: 'Młyny Rothera to wyjątkowy obiekt na mapie Bydgoszczy. Ich historia sięga I połowy XIX wieku. Kompleks budynków położony w samym sercu miasta, '
+        'na Wyspie Młyńskiej — niegdyś był obiektem przemysłowym, a po niedawnej rewitalizacji funkcjonuje jako Centrum Nauki i Kultury z bogatą ofertą wydarzeń. '
+        'Jedną z atrakcji jest także bezpłatny taras widokowy. ',
+        hint: 'Zabytkowe młyny na Wyspie Młyńskiej przy ul. Mennicy',
         address: 'ul. Mennica 10, 85-112 Bydgoszcz',
-        latitude: 53.1238,
-        longitude: 18.0072,
-        tags: ['Industrial', 'Architektura', 'XIX wiek', 'Cegła'],
+        latitude: 53.123639193750705,
+        longitude: 17.99484051170082,
+        tags: ['Industrial', 'Architektura', 'XIX wiek', 'Cegła', 'must-see'],
         rarity: 'legendary',
       ),
 
@@ -59,33 +58,31 @@ class DiscoveryData {
         id: 'stary_rynek',
         name: 'Stary Rynek',
         category: 'Centrum',
-        description: 'Historyczny rynek z XIV wieku, serce Starego Miasta. '
-            'Otoczony kolorowymi kamienicami w stylu secesyjnym i neogotyckimi ratuszami. '
-            'Miejsce pełne restauracji, kawiarni i życia kulturalnego. '
-            'Latem scena koncertów i festynów miejskich.',
+        description: 'To centralny plac miasta, przez który przebiega osiemnasty południk długości geograficznej wschodniej. Na tym samym południku leżą na przykład Kapsztad i Sztokholm.'
+                    'Stary Rynek wytyczony został w 1346 roku, gdy król Kazimierz Wielki nadał Bydgoszczy prawa miejskie. Na przestrzeni wieków zabudowa Rynku wielokrotnie się zmieniała. '
+                    'Ta, którą widzisz, pochodzi głównie z XIX w. Z dawnych opisów i wykopalisk wiadomo, że na środku Rynku znajdował się ratusz. Początkowo był prawdopodobnie drewniany i spłonął w pożarze miasta w 1425 r.'
+                    'Kolejny był już murowany, w stylu gotyckim, ale i jego pochłonął ogień.',
         hint: 'Główny plac w centrum Starego Miasta',
         address: 'Stary Rynek, 85-105 Bydgoszcz',
-        latitude: 53.1237,
-        longitude: 18.0075,
+        latitude: 53.122035363675835,        
+        longitude: 18.00050072883637,
         tags: ['Centrum', 'Historia', 'Restauracje', 'Wydarzenia'],
         rarity: 'rare',
       ),
 
       DiscoveryItem(
         number: 5,
-        id: 'most_jagiellonski',
-        name: 'Most Jagielloński',
+        id: 'most_jagielly',
+        name: 'Most Władysława Jagiełły',
         category: 'Zabytek',
-        description: 'Zabytkowy most zwodzony z 1902 roku, unikatowy obiekt techniczny. '
-            'Jedyny w Polsce most o konstrukcji z dwoma przęsłami zwodzonymi. '
-            'Przepiękna stalowa konstrukcja w stylu secesyjnym. '
-            'Most był świadkiem wielu historycznych wydarzeń.',
-        hint: 'Stalowy most na Starym Kanale w centrum',
+        description: 'Most wantowy na rzece Brdzie wybudowany w 2012 roku. Jeden z 45 mostów w Bydgoszczy. '
+            'Służy głównie ruchowi tramwajowemu, lecz także pieszym i rowerzystom. ',
+        hint: 'Most tramwajowy w centrum',
         address: 'ul. Jagiellońska, 85-097 Bydgoszcz',
-        latitude: 53.1240,
-        longitude: 18.0090,
+        latitude: 53.12941257760773,
+        longitude: 17.994651957143258,
         tags: ['Zabytek', 'Architektura', 'Most', 'Technika'],
-        rarity: 'rare',
+        rarity: 'common',
       ),
 
       DiscoveryItem(
@@ -93,14 +90,13 @@ class DiscoveryData {
         id: 'przechodzacy_przez_rzeke',
         name: 'Przechodzący przez rzekę',
         category: 'Sztuka',
-        description: 'Najbardziej rozpoznawalna rzeźba Bydgoszczy. Sześć postaci brodzących '
-            'przez Brdę, symbol miasta. Dzieło Jerzego Kędziory z 2004 roku. '
-            'Popularne miejsce spotkań i sesji zdjęciowych. '
-            'Nocą pięknie podświetlone, tworzą magiczną atmosferę.',
-        hint: 'Rzeźby w wodzie przy Mostowej',
-        address: 'Most Mostowa, 85-034 Bydgoszcz',
-        latitude: 53.1242,
-        longitude: 18.0078,
+        description: 'Rzeźba balansująca, zawieszona na linie, waży tylko 50 kg.'
+                    'Autorem tej niezwykłej rzeźby jest Jerzy Kędziora. "Przechodzący" '
+                    'zawitał do Bydgoszczy 1 maja 2004 dla upamiętnienia wejścia Polski do Unii Europejskiej.',
+        hint: 'Tą Balansującą rzeźbę często znajdziesz na pocztówkach z Bydgoszczy',
+        address: 'Most Staromiejski Sulimy-Kamińskiego, 85-034 Bydgoszcz',
+        latitude: 53.12338975134721, 
+        longitude: 18.001639755892587,
         tags: ['Sztuka', 'Woda', 'Symbol miasta', 'Fotografia'],
         rarity: 'rare',
       ),
@@ -115,9 +111,9 @@ class DiscoveryData {
             'Kolekcja obejmuje monety z różnych epok i krajów. '
             'Interaktywne wystawy i warsztaty edukacyjne.',
         hint: 'Muzeum na Wyspie Młyńskiej przy ul. Mennicy',
-        address: 'ul. Bernardyńska 12-14, 85-029 Bydgoszcz',
-        latitude: 53.1243,
-        longitude: 18.0067,
+        address: 'ul. Mennica 4, 85-112 Bydgoszcz',
+        latitude: 53.123307086334016,
+        longitude: 17.997522346399823,
         tags: ['Museum', 'Historia', 'Edukacja', 'Pieniądze'],
         rarity: 'rare',
       ),
@@ -133,8 +129,8 @@ class DiscoveryData {
             'Najpiękniej o zachodzie słońca.',
         hint: 'Nad Brdą przy ul. Długiej, obok Wyspy Młyńskiej',
         address: 'ul. Długa, 85-034 Bydgoszcz',
-        latitude: 53.1248,
-        longitude: 18.0070,
+        latitude: 53.121604950027745,
+        longitude: 17.996108021956132,
         tags: ['Widok', 'Woda', 'Fotografia', 'Romantycznie'],
         rarity: 'rare',
       ),
@@ -147,11 +143,11 @@ class DiscoveryData {
         description: 'Gotycka katedra z XV wieku, najważniejsza świątynia w Bydgoszczy. '
             'Wnętrze zachwyca polichromią Władysława Drągowskiego. '
             'Przepiękne witraże i zabytkowe organy. '
-            'Miejsce ważnych uroczystości kościelnych i koncertów.',
+            'Miejsce ważnych uroczystości kościelnych i koncertów. Znajduje się w niej obraz Obraz Matki Bożej Pięknej Miłości.',
         hint: 'Wysoka gotycka katedra przy ul. Fary',
-        address: 'ul. Farna 2, 85-009 Bydgoszcz',
-        latitude: 53.1233,
-        longitude: 18.0083,
+        address: 'ul. Farna 2, 85-101 Bydgoszcz',
+        latitude: 53.123011941546046,
+        longitude: 17.99909494760444,
         tags: ['Religia', 'Gotyk', 'Historia', 'Koncerty'],
         rarity: 'common',
       ),
@@ -159,16 +155,19 @@ class DiscoveryData {
       DiscoveryItem(
         number: 10,
         id: 'czerwony_spichlerz',
-        name: 'Czerwony Spichlerz',
+        name: 'Czerwony Spichlerz (Galeria Sztuki Nowoczesnej)',
         category: 'Zabytek',
-        description: 'Zabytkowy spichlerz z XVIII wieku nad Brdą. '
-            'Charakterystyczna czerwona fasada i barokowa architektura. '
-            'Obecnie siedziba Muzeum Okręgowego. '
-            'Parter mieści ciekawą wystawę o historii Bydgoszczy.',
+        description: 'W latach 1786-88 w południowo-wschodniej części Wyspy Młyń­skiej stanął młyn wodny '
+        'z sześcioma liniami przemiału mąki (tzw. Młyn Panzera). W 1828 został przebudowany, m.in. dobudowano trzy '
+        'kolejne linie mączne oraz koła młyńskie. Obecny budynek powstał w 1861 roku jako młyn parowy z ośmioma liniami mielącymi. '
+        'Nosił nazwę Młynu Camphausa, jednak charakterystyczna kolorystyka ceglanych elewacji sprawiła, że znany jest dziś jako Czerwony Spichrz. '
+        'Po 1945 roku przeszedł na własność Skarbu Państwa, do 1974 roku po­zostając w dzierżawie Państwowych Zakładów Zbożowych. W 1979 roku przeszedł w użytkowanie, '
+        'a w 1997 roku stał się własnością Muzeum Okręgowego im. Leona Wyczółkowskiego w Bydgoszczy. Ze względu na zły stan techniczny prezentowano tu głównie sezonowe '
+        'wystawy sztuki współczesnej, obecnie mieści się tu Galeria Sztuki Nowoczesnej.',
         hint: 'Czerwony budynek nad Brdą w centrum',
-        address: 'ul. Grodzka 9, 85-109 Bydgoszcz',
-        latitude: 53.1241,
-        longitude: 18.0081,
+        address: 'ul. Mennica 8a, 85-101 Bydgoszcz',
+        latitude: 53.122525990149,
+        longitude:  17.997292737293392,
         tags: ['Zabytek', 'Museum', 'Barok', 'Nad wodą'],
         rarity: 'common',
       ),
