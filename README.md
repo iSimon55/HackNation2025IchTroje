@@ -4,6 +4,9 @@
 **Data:** Grudzień 2025  
 **Framework:** Flutter (Multi-platform)
 
+## O pomyśle 
+Proponujemy stworzenie intuicyjnej aplikacji mobilnej w formie pamiętnika terenowego, która za pomocą geolokalizacji zamieni zwiedzanie Bydgoszczy w angażującą grę terenową, prowadząc turystów w każdym wieku do nieoczywistych i ukrytych zakątków miasta. Dzięki niezwykle prostemu interfejsowi użytkownicy bez trudu będą odkrywać unikalne treści historyczne dopiero po fizycznym dotarciu na miejsce. Co istotne, to cyfrowe zaangażowanie być może przełoży się na nagrody w świecie rzeczywistym, oferując system konkretnych zniżek i upominków realizowanych we współpracy z lokalnymi przedsiębiorcami i instytucjami kultury.
+
 ---
 
 ## Preview
