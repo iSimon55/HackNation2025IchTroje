@@ -88,7 +88,7 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 200,
+            expandedHeight: 180,
             pinned: true,
             backgroundColor: AppColors.primaryDark,
             flexibleSpace: FlexibleSpaceBar(
@@ -113,25 +113,16 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 40),
                     Text(
                       '🏆',
                       style: TextStyle(fontSize: 48),
                     ),
-                    const SizedBox(height: 8),
                     Text(
                       '$totalDiscovered / ${discoveries.length}',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'Odkryte miejsca',
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(0.9),
-                        fontSize: 14,
                       ),
                     ),
                   ],
