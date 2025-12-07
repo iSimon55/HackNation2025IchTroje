@@ -78,4 +78,41 @@ class LocationService {
 
     return formatDistance(distance);
   }
+
+  static Future<bool> isWithinRange(
+    double targetLatitude,
+    double targetLongitude,
+    double rangeInMeters,
+  ) async {
+    final position = await getCurrentPosition();
+    if (position == null) {
+      return false;
+    }
+
+    final distance = calculateDistance(
+      position.latitude,
+      position.longitude,
+      targetLatitude,
+      targetLongitude,
+    );
+
+    return distance <= rangeInMeters;
+  }
+
+  static Future<double?> getDistanceInMeters(
+    double targetLatitude,
+    double targetLongitude,
+  ) async {
+    final position = await getCurrentPosition();
+    if (position == null) {
+      return null;
+    }
+
+    return calculateDistance(
+      position.latitude,
+      position.longitude,
+      targetLatitude,
+      targetLongitude,
+    );
+  }
 }

@@ -48,4 +48,23 @@ class DiscoveryStorageService {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_storageKey);
   }
+
+  static Future<void> saveDiscovery(DiscoveryItem discovery) async {
+    final existingDiscoveries = await loadDiscoveries();
+    
+    existingDiscoveries[discovery.id] = {
+      'userPhotoPath': discovery.userPhotoPath,
+      'unlockedAt': discovery.unlockedAt?.toIso8601String(),
+    };
+
+    final prefs = await SharedPreferences.getInstance();
+    final unlockedList = existingDiscoveries.entries.map((entry) => {
+      'id': entry.key,
+      'userPhotoPath': entry.value['userPhotoPath'],
+      'unlockedAt': entry.value['unlockedAt'],
+    }).toList();
+
+    final jsonString = jsonEncode(unlockedList);
+    await prefs.setString(_storageKey, jsonString);
+  }
 }
