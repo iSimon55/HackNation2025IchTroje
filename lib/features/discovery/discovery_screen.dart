@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_spacing.dart';
@@ -87,12 +88,12 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 200,
+            expandedHeight: 180,
             pinned: true,
             backgroundColor: AppColors.primaryDark,
             flexibleSpace: FlexibleSpaceBar(
               title: const Text(
-                'Bydgoski Pokedex',
+                'Bydgoski pamiętnik',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -112,25 +113,16 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 40),
                     Text(
                       '🏆',
                       style: TextStyle(fontSize: 48),
                     ),
-                    const SizedBox(height: 8),
                     Text(
                       '$totalDiscovered / ${discoveries.length}',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'Odkryte miejsca',
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(0.9),
-                        fontSize: 14,
                       ),
                     ),
                   ],
@@ -255,8 +247,8 @@ class _DiscoveryCard extends StatelessWidget {
                       ? (discovery.userPhotoPath != null
                           ? ClipRRect(
                               borderRadius: BorderRadius.circular(8),
-                              child: Image.network(
-                                discovery.userPhotoPath!,
+                              child: Image.file(
+                                File(discovery.userPhotoPath!),
                                 fit: BoxFit.cover,
                                 width: double.infinity,
                                 height: double.infinity,

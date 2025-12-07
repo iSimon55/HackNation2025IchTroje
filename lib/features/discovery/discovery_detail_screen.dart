@@ -6,6 +6,7 @@ import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_text_styles.dart';
 import '../../core/models/discovery_item.dart';
 import '../../core/services/location_service.dart';
+import '../../core/services/discovery_storage_service.dart';
 
 class DiscoveryDetailScreen extends StatefulWidget {
   final DiscoveryItem discovery;
@@ -75,6 +76,39 @@ class _DiscoveryDetailScreenState extends State<DiscoveryDetailScreen> {
 
   Future<void> _pickImage() async {
     try {
+      if (!_discovery.isUnlocked) {
+        final distance = await LocationService.getDistanceInMeters(
+          _discovery.latitude,
+          _discovery.longitude,
+        );
+
+        if (distance == null) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Nie można określić Twojej lokalizacji. Upewnij się, że masz włączoną lokalizację.'),
+                backgroundColor: AppColors.error,
+                duration: Duration(seconds: 4),
+              ),
+            );
+          }
+          return;
+        }
+
+        if (distance > 100) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Jesteś za daleko od tego miejsca! Musisz być w odległości 100m (obecnie: ${LocationService.formatDistance(distance)})'),
+                backgroundColor: AppColors.error,
+                duration: const Duration(seconds: 4),
+              ),
+            );
+          }
+          return;
+        }
+      }
+
       final XFile? image = await _picker.pickImage(
         source: ImageSource.camera,
         maxWidth: 1920,
@@ -83,16 +117,29 @@ class _DiscoveryDetailScreenState extends State<DiscoveryDetailScreen> {
       );
 
       if (image != null) {
+        final updatedDiscovery = _discovery.copyWith(
+          isUnlocked: true,
+          userPhotoPath: image.path,
+          unlockedAt: _discovery.unlockedAt ?? DateTime.now(),
+        );
+
+        await DiscoveryStorageService.saveDiscovery(updatedDiscovery);
+
         setState(() {
-          _discovery = _discovery.copyWith(
-            isUnlocked: true,
-            userPhotoPath: image.path,
-            unlockedAt: DateTime.now(),
-          );
+          _discovery = updatedDiscovery;
         });
 
         if (mounted) {
-          _showUnlockDialog();
+          if (!widget.discovery.isUnlocked) {
+            _showUnlockDialog();
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Zdjęcie zostało zaktualizowane!'),
+                backgroundColor: AppColors.success,
+              ),
+            );
+          }
         }
       }
     } catch (e) {
@@ -109,6 +156,39 @@ class _DiscoveryDetailScreenState extends State<DiscoveryDetailScreen> {
 
   Future<void> _pickFromGallery() async {
     try {
+      if (!_discovery.isUnlocked) {
+        final distance = await LocationService.getDistanceInMeters(
+          _discovery.latitude,
+          _discovery.longitude,
+        );
+
+        if (distance == null) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Nie można określić Twojej lokalizacji. Upewnij się, że masz włączoną lokalizację.'),
+                backgroundColor: AppColors.error,
+                duration: Duration(seconds: 4),
+              ),
+            );
+          }
+          return;
+        }
+
+        if (distance > 100) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Jesteś za daleko od tego miejsca! Musisz być w odległości 100m (obecnie: ${LocationService.formatDistance(distance)})'),
+                backgroundColor: AppColors.error,
+                duration: const Duration(seconds: 4),
+              ),
+            );
+          }
+          return;
+        }
+      }
+
       final XFile? image = await _picker.pickImage(
         source: ImageSource.gallery,
         maxWidth: 1920,
@@ -117,16 +197,29 @@ class _DiscoveryDetailScreenState extends State<DiscoveryDetailScreen> {
       );
 
       if (image != null) {
+        final updatedDiscovery = _discovery.copyWith(
+          isUnlocked: true,
+          userPhotoPath: image.path,
+          unlockedAt: _discovery.unlockedAt ?? DateTime.now(),
+        );
+
+        await DiscoveryStorageService.saveDiscovery(updatedDiscovery);
+
         setState(() {
-          _discovery = _discovery.copyWith(
-            isUnlocked: true,
-            userPhotoPath: image.path,
-            unlockedAt: DateTime.now(),
-          );
+          _discovery = updatedDiscovery;
         });
 
         if (mounted) {
-          _showUnlockDialog();
+          if (!widget.discovery.isUnlocked) {
+            _showUnlockDialog();
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Zdjęcie zostało zaktualizowane!'),
+                backgroundColor: AppColors.success,
+              ),
+            );
+          }
         }
       }
     } catch (e) {
@@ -257,7 +350,7 @@ class _DiscoveryDetailScreenState extends State<DiscoveryDetailScreen> {
               ),
               const SizedBox(height: 24),
               Text(
-                'Dodaj zdjęcie miejsca',
+                _discovery.isUnlocked ? 'Zmień zdjęcie miejsca' : 'Dodaj zdjęcie miejsca',
                 style: AppTextStyles.h2,
               ),
               const SizedBox(height: 24),
@@ -476,9 +569,22 @@ class _DiscoveryDetailScreenState extends State<DiscoveryDetailScreen> {
                             style: AppTextStyles.body.copyWith(height: 1.6),
                           ),
                           const SizedBox(height: 24),
-                          Text(
-                            '📍 Lokalizacja',
-                            style: AppTextStyles.h3,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                '📍 Lokalizacja',
+                                style: AppTextStyles.h3,
+                              ),
+                              TextButton.icon(
+                                onPressed: _openInGoogleMaps,
+                                icon: const Icon(Icons.map, size: 18),
+                                label: const Text('Otwórz w Mapach'),
+                                style: TextButton.styleFrom(
+                                  foregroundColor: AppColors.primary,
+                                ),
+                              ),
+                            ],
                           ),
                           const SizedBox(height: 8),
                           Text(
@@ -659,14 +765,12 @@ class _DiscoveryDetailScreenState extends State<DiscoveryDetailScreen> {
           ),
         ],
       ),
-      floatingActionButton: !_discovery.isUnlocked
-          ? FloatingActionButton.extended(
-              onPressed: _showPhotoOptions,
-              backgroundColor: AppColors.primaryDark,
-              icon: const Icon(Icons.camera_alt),
-              label: const Text('Dodaj zdjęcie'),
-            )
-          : null,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _showPhotoOptions,
+        backgroundColor: AppColors.primaryDark,
+        icon: Icon(_discovery.isUnlocked ? Icons.edit : Icons.camera_alt),
+        label: Text(_discovery.isUnlocked ? 'Zmień zdjęcie' : 'Dodaj zdjęcie'),
+      ),
     );
   }
 

@@ -42,10 +42,13 @@ class CategoryCard extends StatelessWidget {
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  emoji,
-                  style: const TextStyle(fontSize: 40),
+                Center(
+                  child: Text(
+                    emoji,
+                    style: const TextStyle(fontSize: 40),
+                  ),
                 ),
                 const SizedBox(height: AppSpacing.xs),
                 Padding(
