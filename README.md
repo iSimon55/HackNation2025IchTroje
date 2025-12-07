@@ -7,11 +7,14 @@
 ---
 
 ## 🚀 Jak uruchomić aplikację
+Najprościej uruchomić aplikację instalując na maszynie wirtualnej Android lub na własnym telefonie plik [OdkryjBydgoszcz.apk](OdkryjBydgoszcz.apk).
+
+Jeśli chcesz zbudować kod samodzielnie, podążaj za poniższą instrukcją.
 
 ### Wymagania wstępne
 - **Flutter SDK:** >= 3.7.2
 - **Dart SDK:** >= 3.7.2
-- **Android Studio** (dla Android) lub **Xcode** (dla iOS)
+- **Android Studio**
 - **Emulator/Symulator** lub fizyczne urządzenie z włączoną opcją deweloperską
 
 ### Instalacja
