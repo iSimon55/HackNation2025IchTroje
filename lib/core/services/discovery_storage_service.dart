@@ -54,14 +54,19 @@ class DiscoveryStorageService {
     
     existingDiscoveries[discovery.id] = {
       'userPhotoPath': discovery.userPhotoPath,
-      'unlockedAt': discovery.unlockedAt?.toIso8601String(),
+      'unlockedAt': discovery.unlockedAt,
     };
 
     final prefs = await SharedPreferences.getInstance();
-    final unlockedList = existingDiscoveries.entries.map((entry) => {
-      'id': entry.key,
-      'userPhotoPath': entry.value['userPhotoPath'],
-      'unlockedAt': entry.value['unlockedAt'],
+    final unlockedList = existingDiscoveries.entries.map((entry) {
+      final unlockedAt = entry.value['unlockedAt'];
+      return {
+        'id': entry.key,
+        'userPhotoPath': entry.value['userPhotoPath'],
+        'unlockedAt': unlockedAt is DateTime 
+            ? unlockedAt.toIso8601String() 
+            : unlockedAt,
+      };
     }).toList();
 
     final jsonString = jsonEncode(unlockedList);
