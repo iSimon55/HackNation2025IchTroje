@@ -21,7 +21,7 @@ class CategoryData {
               '• System odkrywania miejsc ze zdjęciami\n'
               '• Szczegółowe opisy zabytków\n'
               '• Nawigacja do każdego miejsca\n'
-              '• Aktualne wydarzenia w mieście',
+              '• Zbieranie odznak za odkrycia',
         ),
         CategorySection(
           title: 'Jak zacząć?',
@@ -45,9 +45,9 @@ class CategoryData {
         CategorySection(
           title: 'Jak kupić bilet w tramwaju/autobusie?',
           icon: '🎫',
-          content: 'W Bydgoszczy możesz kupić bilet bezpośrednio w pojeździe:\n\n'
-              '• Biletomaty znajdują się przy drzwiach wejściowych\n'
-              '• Akceptują monety i karty płatnicze (zbliżeniowo)\n'
+          content: 'W Bydgoszczy możesz kupić bilety na kilka sposobów:\n\n'
+              '• Biletomaty znajdują się na początku każdego tramwaju\n'
+              '• Akceptują monety oraz płatności zbliżeniowe kartą płatniczą / telefonem\n'
               '• Wybierz rodzaj biletu na ekranie dotykowym\n'
               '• Kasuj bilet natychmiast po zakupie!',
         ),
@@ -58,7 +58,8 @@ class CategoryData {
               'Bilet jednorazowy (40 min): 4.50 zł\n'
               'Bilet jednorazowy (60 min): 6.00 zł\n'
               'Bilet 24-godzinny: 15.00 zł\n'
-              'Bilet 72-godzinny: 30.00 zł\n\n'
+              'Bilet 72-godzinny: 30.00 zł\n'
+              'System przesiadkowy AT na trasie Fordon - Centrum\n\n'
               'Ulgowe: 50% ceny normalnej',
         ),
         CategorySection(
