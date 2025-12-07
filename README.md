@@ -1,7 +1,102 @@
 # HackNation2025 - Aplikacja Mobilna: Odkryj Bydgoszcz
+
 **Autor:** Igor Simon  
 **Data:** Grudzień 2025  
 **Framework:** Flutter (Multi-platform)
+
+---
+
+## 🚀 Jak uruchomić aplikację
+
+### Wymagania wstępne
+- **Flutter SDK:** >= 3.7.2
+- **Dart SDK:** >= 3.7.2
+- **Android Studio** (dla Android) lub **Xcode** (dla iOS)
+- **Emulator/Symulator** lub fizyczne urządzenie z włączoną opcją deweloperską
+
+### Instalacja
+
+1. **Sklonuj repozytorium:**
+   ```bash
+   git clone https://github.com/iSimon55/HackNation2025IchTroje.git
+   cd HackNation2025
+   ```
+
+2. **Zainstaluj zależności Flutter:**
+   ```bash
+   flutter pub get
+   ```
+
+### Uruchomienie aplikacji
+
+#### Na Androidzie:
+```bash
+# Sprawdź dostępne urządzenia
+flutter devices
+
+# Uruchom aplikację
+flutter run
+```
+
+#### Na iOS (tylko macOS):
+```bash
+# Zainstaluj pod dependencies (pierwsze uruchomienie)
+cd ios
+pod install
+cd ..
+
+# Uruchom aplikację
+flutter run
+```
+
+#### Na emulatorze/symulatorze:
+```bash
+# Uruchom emulator Android
+flutter emulators --launch <emulator_id>
+
+# Lub otwórz symulator iOS (macOS)
+open -a Simulator
+
+# Następnie uruchom aplikację
+flutter run
+```
+
+### Uprawnienia
+
+Aplikacja wymaga następujących uprawnień:
+- 📍 **Lokalizacja** - do obliczania odległości do atrakcji i weryfikacji pozycji użytkownika
+- 📷 **Aparat** - do robienia zdjęć atrakcji (odblokowanie miejsca)
+- 🖼️ **Galeria** - do wybierania zdjęć z galerii
+- 🌐 **Internet** - do otwierania linków zewnętrznych w przeglądarce
+
+### Budowanie wersji produkcyjnej
+
+#### Android APK:
+```bash
+flutter build apk --release
+```
+
+#### Android App Bundle (do Google Play):
+```bash
+flutter build appbundle --release
+```
+
+#### iOS:
+```bash
+flutter build ios --release
+```
+
+---
+
+## 📦 Zainstalowane pakiety
+
+- `cupertino_icons: ^1.0.8` - Ikony iOS
+- `image_picker: ^1.0.7` - Wybieranie i robienie zdjęć
+- `shared_preferences: ^2.2.2` - Lokalne przechowywanie danych
+- `geolocator: ^10.1.0` - Usługi lokalizacji
+- `url_launcher: ^6.2.2` - Otwieranie URL w przeglądarce
+- `flutter_map: ^6.1.0` - Interaktywne mapy
+- `latlong2: ^0.9.0` - Praca z współrzędnymi geograficznymi
 
 ---
 
