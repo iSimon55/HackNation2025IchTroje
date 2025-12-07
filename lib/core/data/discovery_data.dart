@@ -291,6 +291,20 @@ class DiscoveryData {
         tags: ['Kultura', 'Woda'],
         rarity: 'common',
       ),
+      
+      DiscoveryItem(
+        number: 21,
+        id: 'targi_wystawiennicze',
+        name: 'Bydgoskie Centrum Targowo - Wystawiennicze',
+        category: 'Kultura',
+        description: 'Innowacyjne centrum targowo-wystawiennicze. ',
+        hint: 'Miejsce organizacji HackNation 2025 - największego wydarzenia technologicznego w Polsce',
+        address: 'ul. Spichlerna 1, 85-108 Bydgoszcz',
+        latitude: 53.1709299038366, 
+        longitude: 18.0473893792504,
+        tags: ['Kultura', 'Woda'],
+        rarity: 'common',
+      ),
     ];
   }
 }
