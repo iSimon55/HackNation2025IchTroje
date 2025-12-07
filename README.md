@@ -6,6 +6,9 @@
 
 ---
 
+## Preview
+![](assets/images/demo_view.png)
+
 ## 🚀 Jak uruchomić aplikację
 Najprościej uruchomić aplikację instalując na maszynie wirtualnej Android lub na własnym telefonie plik [OdkryjBydgoszcz.apk](OdkryjBydgoszcz.apk).
 
